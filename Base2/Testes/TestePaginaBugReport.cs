@@ -32,6 +32,7 @@ namespace Base2.Testes
             Login.BotaoLogin.Click();
             Thread.Sleep(1000);
             Assert.AreEqual(view.Menu.Enabled, true);
+            
             view.MenuRportIssues.Click();
 
         }
@@ -44,7 +45,8 @@ namespace Base2.Testes
 
             bugRport.botaoSelectProject.Click();
             Assert.AreEqual(bugRport.headerEnterReport.Enabled, true);
-
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\BotaoSelectProject.png", ScreenshotImageFormat.Png);
             view.MenuRportIssues.Click();
         }
 
@@ -57,6 +59,8 @@ namespace Base2.Testes
             bugRport.botaoSubmit2.Click();
             Thread.Sleep(2000);
             Assert.AreEqual(bugRport.errorMessage11.Text, "A necessary field \"Summary\" was empty. Please recheck your inputs.");
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\CampoSummaryVazio.png", ScreenshotImageFormat.Png);
             view.MenuRportIssues.Click();
         }
 
@@ -71,6 +75,8 @@ namespace Base2.Testes
             bugRport.botaoSubmit2.Click();
             Thread.Sleep(2000);
             Assert.AreEqual(bugRport.errorMessage12.Text, "A necessary field \"Description\" was empty. Please recheck your inputs.");
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\CampoDescriptionVazio.png", ScreenshotImageFormat.Png);
             view.MenuRportIssues.Click();
         }
 
@@ -87,6 +93,8 @@ namespace Base2.Testes
             bugRport.campoDescription.SendKeys("descrição");
             bugRport.botaoSubmit2.Click();
             Assert.AreEqual(bugRport.errorMessage13.Text, "A necessary field \"Category\" was empty. Please recheck your inputs.");
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\CampoCategoryVazio.png", ScreenshotImageFormat.Png);
             view.MenuRportIssues.Click();
         }
 
@@ -102,6 +110,8 @@ namespace Base2.Testes
 
             bugRport.botaoSubmit2.Click();
             Assert.AreEqual(bugRport.operationSucessful.Text, "4rw3rw");
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\CampoCategoryPreenchido.png", ScreenshotImageFormat.Png);
             view.MenuRportIssues.Click();
         }
        

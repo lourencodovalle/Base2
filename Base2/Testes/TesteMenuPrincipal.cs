@@ -40,7 +40,7 @@ namespace Base2.Testes
             view.MenuMyView.Click();
             Assert.AreEqual(view.Menu.Enabled, true);
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\imagem1.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkMyView.png", ScreenshotImageFormat.Png);
 
         }
 
@@ -53,6 +53,8 @@ namespace Base2.Testes
 
             view.MenuViewIssues.Click();
             Assert.AreEqual(bugPage.headerViewIssues.Enabled, true);
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkViewIssues.png", ScreenshotImageFormat.Png);
         }
 
 
@@ -64,6 +66,8 @@ namespace Base2.Testes
 
             view.MenuSumary.Click();
             Assert.AreEqual(summary.headerSummary.Enabled, true);
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkSummary.png", ScreenshotImageFormat.Png);
         }
 
 
@@ -75,6 +79,8 @@ namespace Base2.Testes
             
             view.MenuRportIssues.Click();
             Assert.AreEqual(bugReport.headerReportIssue.Enabled, true);
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkBugReport.png", ScreenshotImageFormat.Png);
         }
 
 
@@ -86,6 +92,8 @@ namespace Base2.Testes
 
             view.MenuManage.Click();
             Assert.AreEqual(manage.headerAthentication.Enabled, true);
+            Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
+            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkManage.png", ScreenshotImageFormat.Png);
         }
 
         public void CleanUp()
