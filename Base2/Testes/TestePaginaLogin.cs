@@ -3,6 +3,7 @@ using NUnit.Framework;
 using System.Threading;
 using Base2.Paginas;
 using OpenQA.Selenium.Chrome;
+using System.IO;
 
 namespace Base2.Testes
 {
@@ -30,7 +31,7 @@ namespace Base2.Testes
             Thread.Sleep(1000);
             Assert.AreEqual(Login.MensagemErro.Text, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LoginCamposVazios.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\Imagens\\LoginCamposVazios.png", ScreenshotImageFormat.Png);
             Login.CampoUsuario.Clear();
         }
 
@@ -44,7 +45,7 @@ namespace Base2.Testes
             Thread.Sleep(1000);
             Assert.AreEqual(Login.MensagemErro.Text, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LoginInvalidoSenhaVazio.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\Imagens\\LoginInvalidoSenhaVazio.png", ScreenshotImageFormat.Png);
             Login.CampoUsuario.Clear();
         }
 
@@ -58,7 +59,7 @@ namespace Base2.Testes
             Thread.Sleep(1000);
             Assert.AreEqual(Login.MensagemErro.Text, "Your account may be disabled or blocked or the username/password you entered is incorrect.");
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LoginInvalidoUsuarioVazio.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\Imagens\\LoginInvalidoUsuarioVazio.png", ScreenshotImageFormat.Png);
             Login.CampoSenha.Clear();
         }
 
@@ -72,7 +73,7 @@ namespace Base2.Testes
             Thread.Sleep(1000);
             Assert.AreEqual(perdiSenha.header.Text, "Password Reset");
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LinkPerdiMinhaSenha.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\Imagens\\LinkPerdiMinhaSenha.png", ScreenshotImageFormat.Png);
             perdiSenha.LinkLogin.Click();
             
         }
@@ -90,7 +91,7 @@ namespace Base2.Testes
             Thread.Sleep(1000);
             Assert.AreEqual(view.Menu.Enabled,true);
             Screenshot imagem = ((ITakesScreenshot)Driver.driver).GetScreenshot();
-            imagem.SaveAsFile("C:\\Users\\loure\\Desktop\\Base2\\Base2\\Imagens\\LoginValido.png", ScreenshotImageFormat.Png);
+            imagem.SaveAsFile(System.AppDomain.CurrentDomain.BaseDirectory.ToString() + "\\Imagens\\LoginValido.png", ScreenshotImageFormat.Png);
 
         }
 

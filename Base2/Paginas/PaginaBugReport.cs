@@ -49,15 +49,10 @@ namespace Base2.Paginas
         [FindsBy(How = How.CssSelector, Using = "body > div:nth-child(6) > form > table > tbody > tr:nth-child(16) > td.center > input")]
         public IWebElement botaoSubmit2 { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "body > div:nth-child(6) > form > table > tbody > tr:nth-child(1) > td")]
+        [FindsBy(How = How.ClassName, Using = "form-title")]
         public IWebElement headerEnterReport { get; set; }
+
         
-
-
-
-
-
-
 
     }
 }
